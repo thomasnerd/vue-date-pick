@@ -48,7 +48,7 @@
                             @click="incrementMonth(1)"
                         >{{ nextMonthCaption }}</button>
                         <div class="vdpPeriodControls">
-                            <div class="vdpPeriodControl">
+                            <div class="vdpPeriodControl vdpPeriodMonth" >
                                 <button :class="directionClass" :key="currentPeriod.month" type="button">
                                     {{ months[currentPeriod.month] }}
                                 </button>
@@ -58,7 +58,7 @@
                                     </option>
                                 </select>
                             </div>
-                            <div class="vdpPeriodControl">
+                            <div class="vdpPeriodControl vdpPeriodYear" >
                                 <button :class="directionClass" :key="currentPeriod.year" type="button">
                                     {{ currentPeriod.year }}
                                 </button>

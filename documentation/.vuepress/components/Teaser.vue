@@ -55,7 +55,21 @@ export default {
 
 };
 </script>
+<style scoped >
+    .vdpHeader .vdpPeriodControls  {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        justify-items: start;
 
+    }
+
+    .vdpHeader .vdpPeriodControls .vdpPeriodMonth {
+        grid-column: 2/3; grid-row: 1/2;
+    }
+    .vdpHeader .vdpPeriodControls .vdpPeriodYear {
+        grid-column: 1/2; grid-row: 1/2;
+    }
+</style>
 <style lang="scss" scoped>
 
     .teaser {
@@ -144,5 +158,9 @@ export default {
         }
 
     }
+
+
+    
+
 
 </style>

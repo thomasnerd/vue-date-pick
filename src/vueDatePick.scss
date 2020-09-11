@@ -1,5 +1,8 @@
-$vdpColor: #7485c2 !default;
-
+$vdpGratusColor: linear-gradient(-19deg,#ff465c,#f9374f,#f6703a,#ffb900) !default;
+$vdpColor: #f6703a !default;
+$vdpColorGradient: $vdpGratusColor;
+//$vdpColor: #7485c2 !default;
+//$vdpColorGradient: $vdpColor;
 $vdpHighlightedColor: orange !default;
 
 @keyframes vdpSlideFromLeft {
@@ -225,6 +228,7 @@ $vdpHighlightedColor: orange !default;
 
 }
 
+
 .vdpPeriodControl {
 
     display: inline-block; position: relative;
@@ -304,13 +308,13 @@ $vdpHighlightedColor: orange !default;
 
 .vdpCell.today {
 
-    color: $vdpColor;
+    color: $vdpColorGradient;
 
 }
 
 .vdpCell.selected .vdpCellContent {
 
-    color: #fff; background: $vdpColor;
+    color: #fff; background: $vdpColorGradient;
 
 }
 
@@ -326,7 +330,7 @@ $vdpHighlightedColor: orange !default;
     // left: 50%;
     border-radius: 50%;
     // transform: translate(-50%);
-    transform: translate(70%, +375%);
+    transform: translate(70%, +460%);
     background-image: linear-gradient(314deg,#ffb000,#f78029 30%,#fb3846 69%,#ff456c 83%,#ff455f);
     background-image: -webkit-linear-gradient(314deg,#ffb000,#f78029 30%,#fb3846 69%,#ff456c 83%,#ff455f);
 
@@ -338,7 +342,7 @@ $vdpHighlightedColor: orange !default;
 
     .vdpCell.selectable:hover .vdpCellContent {
 
-        color: #fff; background: $vdpColor;
+        color: #fff; background: $vdpColorGradient;
 
     }
 
@@ -405,7 +409,7 @@ $vdpHighlightedColor: orange !default;
 .vdpTimeUnit > input:hover,
 .vdpTimeUnit > input:focus {
 
-    border-bottom-color: $vdpColor;
+    border-bottom-color: $vdpColorGradient;
 
 }
 
@@ -445,7 +449,7 @@ $vdpHighlightedColor: orange !default;
 .vdp12HourToggleBtn:hover,
 .vdp12HourToggleBtn:focus {
 
-    color: $vdpColor; outline: 0;
+    color: $vdpColorGradient; outline: 0;
 
 }
 
