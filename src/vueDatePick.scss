@@ -1,5 +1,7 @@
 $vdpColor: #7485c2 !default;
 
+$vdpHighlightedColor: orange !default;
+
 @keyframes vdpSlideFromLeft {
     from { opacity: 0; transform: translate3d(-0.5em,0,0); }
     to { opacity: 1; transform: translate3d(0,0,0); }
@@ -311,6 +313,26 @@ $vdpColor: #7485c2 !default;
     color: #fff; background: $vdpColor;
 
 }
+
+.vdpCell.highlighted .vdpCellContent:before {
+
+    // color: #fff; background: $vdpHighlightedColor;
+
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    // bottom: -4px;
+    // left: 50%;
+    border-radius: 50%;
+    // transform: translate(-50%);
+    transform: translate(70%, +375%);
+    background-image: linear-gradient(314deg,#ffb000,#f78029 30%,#fb3846 69%,#ff456c 83%,#ff455f);
+    background-image: -webkit-linear-gradient(314deg,#ffb000,#f78029 30%,#fb3846 69%,#ff456c 83%,#ff455f);
+
+}
+
+
 
 @media (hover: hover) {
 

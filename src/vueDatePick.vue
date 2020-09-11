@@ -89,6 +89,7 @@
                                     :class="{
                                         selectable: editable && !item.disabled,
                                         selected: item.selected,
+                                        highlighted: item.highlighted,
                                         disabled: item.disabled,
                                         today: item.today,
                                         outOfRange: item.outOfRange
@@ -257,7 +258,13 @@ export default {
         startWeekOnSunday: {
             type: Boolean,
             default: false
-        }
+        },
+        highlightedValues: {
+            type: Array,
+            default: ()=>([
+                '2020-09-01', '2020-09-02', '2020-09-15', '2020-09-20'
+            ])
+        },
     },
 
     data() {
@@ -284,6 +291,21 @@ export default {
                 : undefined
             ;
 
+        },
+
+        highlightedValueDates() {
+            const highlightedValues = this.highlightedValues;
+            const format = this.format;
+
+            var arr = [];
+            if (highlightedValues !== undefined && highlightedValues.length > 0) {
+                for (const  highlightedValue of highlightedValues) {
+                    arr.push(highlightedValue
+                        ? this.parseDateString(highlightedValue, format)
+                        : undefined)
+                }
+            }    
+            return arr;
         },
 
         isReadOnly() {
@@ -343,6 +365,7 @@ export default {
                     day.date.getFullYear(), day.date.getMonth() + 1, day.date.getDate()
                 ].join('-');
                 day.selected = this.valueDate ? areSameDates(day.date, this.valueDate) : false;
+                day.highlighted = this.highlightedValueDates ? areSameOneOfDates(day.date, this.highlightedValueDates) : false; 
             });
 
             return chunkArray(days, 7);
@@ -846,6 +869,16 @@ function areSameDates(date1, date2) {
         (date1.getFullYear() === date2.getFullYear())
     ;
 
+}
+
+function areSameOneOfDates(date1, dates2) {
+    for (const date2 of dates2) {
+        if ( (date1.getDate() === date2.getDate()) &&
+            (date1.getMonth() === date2.getMonth()) &&
+        (date1.getFullYear() === date2.getFullYear()) )
+            return true;
+    }
+    return false;
 }
 
 function range(start, end) {
