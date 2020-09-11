@@ -30,7 +30,7 @@ module.exports = {
     'padded-blocks': 'off',
     'no-mixed-operators': 'off',
     'indent': ['error', 4, {"SwitchCase": 1}],
-    'linebreak-style': ['error', 'unix'],
+    'linebreak-style': ['error', 'windows'],
     'quotes': ['error', 'single'],
     'semi': ['error', 'always'],
     'no-unused-vars': ['error', { 'args': 'none' }],

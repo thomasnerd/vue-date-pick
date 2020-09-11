@@ -26,11 +26,11 @@
     "dev": "npm run dev:docs",
     "dev:docs": "vuepress dev documentation",
     "build": "npm run build:lib && npm run build:docs",
-    "build:lib": "NODE_ENV=production webpack --progress",
+    "build:lib": "SET NODE_ENV=production && webpack --progress",
     "build:docs": "vuepress build documentation",
     "lint": "eslint src/vueDatePick.vue -c .eslintrc.js --color",
-    "test": "BABEL_ENV=test karma start --single-run --browsers ChromeHeadless",
-    "watch:test": "BABEL_ENV=test karma start --browsers ChromeHeadless"
+    "test": "SET BABEL_ENV=test && karma start --single-run --browsers ChromeHeadless",
+    "watch:test": "SET BABEL_ENV=test && karma start --browsers ChromeHeadless"
   },
   "dependencies": {
     "vue": "^2.6.0"
