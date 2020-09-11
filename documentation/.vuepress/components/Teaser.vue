@@ -16,6 +16,8 @@
                     v-model="date"
                     :highlightedValues=highlightedDates
                     :hasInputElement="false"
+                    :yearSuffix="'年'"
+                    :yearPrefix="'year'"
                 ></date-time-picker>
             </div>
         </div>
@@ -55,7 +57,7 @@ export default {
 
 };
 </script>
-<style scoped >
+<style  >
     .vdpHeader .vdpPeriodControls  {
         display: grid;
         grid-template-columns: auto minmax(0, 1fr);

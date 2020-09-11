@@ -60,7 +60,7 @@
                             </div>
                             <div class="vdpPeriodControl vdpPeriodYear" >
                                 <button :class="directionClass" :key="currentPeriod.year" type="button">
-                                    {{ currentPeriod.year }}
+                                    {{yearPrefix}}{{ currentPeriod.year }}{{yearSuffix}}
                                 </button>
                                 <select v-model="currentPeriod.year">
                                     <option v-for="year in yearRange" :value="year" :key="year">
@@ -100,7 +100,7 @@
                                 >
                                     <div
                                         class="vdpCellContent"
-                                    >{{ item.date.getDate() }}</div>
+                                    >{{ ('0' + item.date.getDate()).slice(-2)}}</div>
                                 </td>
                             </tr>
                         </tbody>
@@ -264,6 +264,14 @@ export default {
             default: () => ([
                 '2020-09-01', '2020-09-02', '2020-09-15', '2020-09-20'
             ])
+        },
+        yearSuffix: {
+            type: String,
+            default: ''
+        },
+        yearPrefix: {
+            type: String,
+            default: ''
         }
     },
 
