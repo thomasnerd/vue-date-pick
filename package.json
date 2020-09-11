@@ -1,11 +1,11 @@
 {
   "name": "@thomaswu/vue-date-pick",
-  "version": "1.4.1",
+  "version": "1.4.1a",
   "description": "Date time picker based on Vue",
   "homepage": "https://dbrekalo.github.io/vue-date-pick/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dbrekalo/vue-date-pick"
+    "url": "https://github.com/thomasnerd/vue-date-pick"
   },
   "main": "dist/vueDatePick.js",
   "license": "MIT",

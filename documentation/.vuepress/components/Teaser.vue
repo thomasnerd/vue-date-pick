@@ -14,6 +14,7 @@
                 </div>
                 <date-time-picker
                     v-model="date"
+                    :highlightedValues=highlightedDates
                     :hasInputElement="false"
                 ></date-time-picker>
             </div>
@@ -31,8 +32,26 @@ export default {
     data: () => ({
         date: DateTimePicker.methods.formatDateToString(
             new Date(), 'YYYY-MM-DD'
-        )
-    })
+        ),
+    }),
+
+    computed: {
+        highlightedDates() {
+            const today = new Date();
+            const date1 = new Date(today);
+            date1.setDate(today.getDate() + 1);
+            const date2 = new Date(today);
+            date2.setDate(today.getDate() + 2);
+            return [
+            DateTimePicker.methods.formatDateToString(
+            date1, 'YYYY-MM-DD'
+            ),
+            DateTimePicker.methods.formatDateToString(
+            date2, 'YYYY-MM-DD'
+            )];
+            // return ['2020-09-16','2020-09-17'];
+        }    
+    }
 
 };
 </script>

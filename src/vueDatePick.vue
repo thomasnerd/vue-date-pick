@@ -261,10 +261,10 @@ export default {
         },
         highlightedValues: {
             type: Array,
-            default: ()=>([
+            default: () => ([
                 '2020-09-01', '2020-09-02', '2020-09-15', '2020-09-20'
             ])
-        },
+        }
     },
 
     data() {
@@ -299,12 +299,12 @@ export default {
 
             var arr = [];
             if (highlightedValues !== undefined && highlightedValues.length > 0) {
-                for (const  highlightedValue of highlightedValues) {
+                for (const highlightedValue of highlightedValues) {
                     arr.push(highlightedValue
                         ? this.parseDateString(highlightedValue, format)
-                        : undefined)
+                        : undefined);
                 }
-            }    
+            }
             return arr;
         },
 
@@ -365,7 +365,7 @@ export default {
                     day.date.getFullYear(), day.date.getMonth() + 1, day.date.getDate()
                 ].join('-');
                 day.selected = this.valueDate ? areSameDates(day.date, this.valueDate) : false;
-                day.highlighted = this.highlightedValueDates ? areSameOneOfDates(day.date, this.highlightedValueDates) : false; 
+                day.highlighted = this.highlightedValueDates ? areSameOneOfDates(day.date, this.highlightedValueDates) : false;
             });
 
             return chunkArray(days, 7);
@@ -873,10 +873,11 @@ function areSameDates(date1, date2) {
 
 function areSameOneOfDates(date1, dates2) {
     for (const date2 of dates2) {
-        if ( (date1.getDate() === date2.getDate()) &&
+        if ((date1.getDate() === date2.getDate()) &&
             (date1.getMonth() === date2.getMonth()) &&
-        (date1.getFullYear() === date2.getFullYear()) )
+        (date1.getFullYear() === date2.getFullYear())) {
             return true;
+        }
     }
     return false;
 }
