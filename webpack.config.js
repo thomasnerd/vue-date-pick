@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
-const isProduction = process.env.NODE_ENV === 'production';
+const isProduction = true;// process.env.NODE_ENV === 'production';
 
 module.exports = {
 

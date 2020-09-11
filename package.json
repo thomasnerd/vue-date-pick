@@ -1,6 +1,6 @@
 {
   "name": "@thomaswu/vue-date-pick",
-  "version": "1.4.1b",
+  "version": "1.4.1c",
   "description": "Date time picker based on Vue",
   "homepage": "https://dbrekalo.github.io/vue-date-pick/",
   "repository": {
@@ -26,7 +26,7 @@
     "dev": "npm run dev:docs",
     "dev:docs": "vuepress dev documentation",
     "build": "npm run build:lib && npm run build:docs",
-    "build:lib": "SET NODE_ENV=production && webpack --progress",
+    "build:lib": "SET NODE_ENV=production && webpack --progress --mode production",
     "build:docs": "vuepress build documentation",
     "lint": "eslint src/vueDatePick.vue -c .eslintrc.js --color",
     "test": "SET BABEL_ENV=test && karma start --single-run --browsers ChromeHeadless",
