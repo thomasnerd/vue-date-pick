@@ -355,7 +355,14 @@ export default {
             }
 
             // append next month dates
-            const daysLeft = 7 - days.length % 7;
+            var daysLeft = 7 - days.length % 7;
+
+            // add up to 6 rows if only have 5 rows ( 35 items)
+            if (days.length < 28) {
+                daysLeft = 21 - days.length % 7;
+            } else if (days.length < 35) {
+                daysLeft = 14 - days.length % 7;
+            }
 
             for (let i = 1; i <= daysLeft; i++) {
 
